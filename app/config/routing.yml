@@ -1,0 +1,5 @@
+chema_workout:
+    resource: "@ChemaWorkoutBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
