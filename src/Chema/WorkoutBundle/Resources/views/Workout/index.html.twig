@@ -3,7 +3,8 @@
 {% block body -%}
     <h1>Workout list</h1>
 
-    <table class="records_list">
+    <div class="row top-buffer">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -23,10 +24,10 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('workoutcrud_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('workoutcrud_show', { 'id': entity.id }) }}" class="btn btn-large btn-block btn-default">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('workoutcrud_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('workoutcrud_edit', { 'id': entity.id }) }}" class="btn btn-large btn-block btn-inverse">edit</a>
                     </li>
                 </ul>
                 </td>
@@ -34,12 +35,17 @@
         {% endfor %}
         </tbody>
     </table>
+    </div>
 
         <ul>
         <li>
+             <div class="row top-buffer">
+        <div class="span3">
             <a href="{{ path('workoutcrud_new') }}">
                 Create a new entry
             </a>
+            </div>
+            </div>
         </li>
     </ul>
     {% endblock %}
