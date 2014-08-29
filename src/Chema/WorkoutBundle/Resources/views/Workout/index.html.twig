@@ -1,10 +1,19 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Workout list</h1>
+    <h1 >Lista de Entrenamiento</h1>
 
     <div class="row top-buffer">
-    <table class="table table-striped">
+        <div class="span3">
+            <a href="{{ path('workoutcrud_new') }}" class="btn btn-large btn-block btn-primary">
+                Crear una nueva entrada
+            </a>
+        </div>
+    </div>
+
+
+    <div class="row top-buffer">
+    <table class="table table-striped" >
         <thead>
             <tr>
                 <th>Id</th>
@@ -19,33 +28,17 @@
             <tr>
                 <td><a href="{{ path('workoutcrud_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.activity }}</td>
-                <td>{% if entity.occurrenceDate %}{{ entity.occurrenceDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.occurrenceDate %}{{ entity.occurrenceDate|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ entity.hours }}</td>
                 <td>
                 <ul>
-                    <li>
-                        <a href="{{ path('workoutcrud_show', { 'id': entity.id }) }}" class="btn btn-large btn-block btn-default">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('workoutcrud_edit', { 'id': entity.id }) }}" class="btn btn-large btn-block btn-inverse">edit</a>
-                    </li>
+                        <a href="{{ path('workoutcrud_show', { 'id': entity.id }) }}" class="btn btn-large btn-block btn-default">Mostrar</a>
+                         <a href="{{ path('workoutcrud_edit', { 'id': entity.id }) }}" class="btn btn-large btn-block btn-inverse">Editar</a>             
                 </ul>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-    </div>
-
-        <ul>
-        <li>
-             <div class="row top-buffer">
-        <div class="span3">
-            <a href="{{ path('workoutcrud_new') }}">
-                Create a new entry
-            </a>
-            </div>
-            </div>
-        </li>
-    </ul>
+    </div>      
     {% endblock %}

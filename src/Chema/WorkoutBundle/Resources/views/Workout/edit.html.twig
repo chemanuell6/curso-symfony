@@ -1,16 +1,18 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Workout edit</h1>
-
+    <h1>Editar Entrenamiento</h1>    
     {{ form(edit_form) }}
+    <div class="row top-buffer">
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('workoutcrud') }}">
-            Back to the list
+        <div class="row top-buffer">    
+    		{{ form(delete_form) }}
+    	</div>
+        <div class="row top-buffer">    
+        <a href="{{ path('workoutcrud') }}" class="btn btn-large btn-block btn-default">
+            Regresar al listado
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        <div>
+	
+</div>
 {% endblock %}

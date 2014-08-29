@@ -1,15 +1,14 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Workout creation</h1>
+    <h1>Creacion de Entrenamiento</h1>
 
     {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('workoutcrud') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+        <div class="row top-buffer">
+         	<div class="span3">    
+        		<a href="{{ path('workoutcrud') }}" class="btn btn-large btn-block btn-default">
+            	Regresar al listado
+        		</a>
+        	</div> 
+		</div>
 {% endblock %}

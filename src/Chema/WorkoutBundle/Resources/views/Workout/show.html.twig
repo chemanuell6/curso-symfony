@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Workout</h1>
+    <h1>Entrenamiento</h1>
 
     <table class="record_properties">
         <tbody>
@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <th>Occurrencedate</th>
-                <td>{{ entity.occurrenceDate|date('Y-m-d H:i:s') }}</td>
+                <td>{{ entity.occurrenceDate|date('Y-m-d') }}</td>
             </tr>
             <tr>
                 <th>Hours</th>
@@ -26,15 +26,18 @@
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('workoutcrud') }}">
-            Back to the list
+        <a href="{{ path('workoutcrud_edit', { 'id': entity.id }) }}" class="btn btn-large btn-block btn-default">
+            Editar
         </a>
     </li>
+    <br><br>
     <li>
-        <a href="{{ path('workoutcrud_edit', { 'id': entity.id }) }}">
-            Edit
+        <a href="{{ path('workoutcrud') }}" class="btn btn-large btn-block btn-default">
+            Regresar al listado
         </a>
     </li>
-    <li>{{ form(delete_form) }}</li>
+    <br>   
+    
+    <li > {{ form(delete_form) }} </li>
 </ul>
 {% endblock %}

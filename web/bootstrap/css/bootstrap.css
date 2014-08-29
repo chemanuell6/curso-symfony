@@ -8,6 +8,13 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+.apariencia{
+   padding: .2em;
+   background-color: rgb(227, 255, 224);
+   color: blue;
+}
+
+
 .clearfix {
   *zoom: 1;
 }
@@ -138,7 +145,7 @@ html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
-  -webkit-appearance: button;
+  -webkit-appearance: button;  
 }
 
 label,
@@ -150,6 +157,10 @@ input[type="submit"],
 input[type="radio"],
 input[type="checkbox"] {
   cursor: pointer;
+}
+
+input[type="text"] {
+  border: 1px dotted red;
 }
 
 input[type="search"] {
